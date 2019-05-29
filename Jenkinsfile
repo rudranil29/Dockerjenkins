@@ -10,7 +10,7 @@ node {
     stage('Build image') {
         /* This builds the actual image */
 
-        app = docker.build("drupal")
+        app = docker.build("rudranil29/drupal")
     }
 
     stage('Test image') {
@@ -24,7 +24,7 @@ node {
         /* 
 			You would need to first register with DockerHub before you can push images to your account
 		*/
-        docker.withRegistry('https://quay.io/rudranil29/drupal', 'quay') {
+        docker.withRegistry('https://quay.io/', 'quay') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
             } 
