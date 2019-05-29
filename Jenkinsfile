@@ -24,7 +24,7 @@ node {
         /* 
 			You would need to first register with DockerHub before you can push images to your account
 		*/
-        docker.withRegistry('quay.io/rudranil29/drupal', 'quay') {
+        docker.withRegistry('https://quay.io/rudranil29/drupal', 'quay') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
             } 
